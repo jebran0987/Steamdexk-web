@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Steam Deck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    #page-set { padding-top: 85px; }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <button id="menu-btn" onclick="toggleMenu()"></button>
+    <span>Wi-Fi</span><span>87%</span><span>21:42</span>
+  </header>
+
+  <!-- HOME PAGE -->
+  <main class="pg" id="page-home">
+    <h2>Recent games</h2>
+    <div class="row">
+      <div class="g1 t" onclick="openGame(1)" onmouseover="showHero(1)" title="Minecraft"></div>
+      <div class="g2 t" onclick="openGame(2)" onmouseover="showHero(2)" title="Empires of the Undergrowth"></div>
+      <div class="g3 t" onclick="openGame(3)" onmouseover="showHero(3)" title="Left 4 Dead 2"></div>
+      <div class="g4 t" onclick="openGame(4)" onmouseover="showHero(4)" title="Taiko no Tatsujin"></div>
+      <div class="g5 t" onclick="openGame(5)" onmouseover="showHero(5)" title="Undertale"></div>
+      <div class="g6 t" onclick="openGame(6)" onmouseover="showHero(6)" title="BeamNG.drive"></div>
+    </div>
+
+    <!-- Hero 1: Minecraft -->
+    <div class="hero" id="hero-1">
+      <b class="ti">Minecraft</b><span class="d">Mojang Studios</span>
+      <div class="stats">
+        <span class="l"><small>Last played</small>1 month ago</span>
+        <span class="tm"><small>Play time</small>5 hours</span>
+        <span class="v"><small>Deck status</small>Unverified</span>
+      </div>
+      <button class="play" onclick="openGame(1)">▶ Play</button>
+    </div>
+
+    <!-- Hero 2: Empires of the Undergrowth -->
+    <div class="hero" id="hero-2">
+      <b class="ti">Empires of the Undergrowth</b><span class="d">Slug Disco</span>
+      <div class="stats">
+        <span class="l"><small>Last played</small>Aug 18, 2026</span>
+        <span class="tm"><small>Play time</small>50.8 hours</span>
+        <span class="v"><small>Deck status</small>Playable</span>
+      </div>
+      <button class="play" onclick="openGame(2)">▶ Play</button>
+    </div>
+
+    <!-- Hero 3: Left 4 Dead 2 -->
+    <div class="hero" id="hero-3">
+      <b class="ti">Left 4 Dead 2</b><span class="d">Valve</span>
+      <div class="stats">
+        <span class="l"><small>Last played</small>Recently</span>
+        <span class="tm"><small>Play time</small>0.0 hours</span>
+        <span class="v"><small>Deck status</small>Verified</span>
+      </div>
+      <button class="play" onclick="openGame(3)">▶ Play</button>
+    </div>
+
+    <!-- Hero 4: Taiko no Tatsujin -->
+    <div class="hero" id="hero-4">
+      <b class="ti">Taiko no Tatsujin</b><span class="d">Bandai Namco Amusement Lab Inc.</span>
+      <div class="stats">
+        <span class="l"><small>Last played</small>Now</span>
+        <span class="tm"><small>Play time</small>564.6 hours</span>
+        <span class="v"><small>Deck status</small>Verified</span>
+      </div>
+      <button class="play" onclick="openGame(4)">▶ Play</button>
+    </div>
+
+    <!-- Hero 5: Undertale -->
+    <div class="hero" id="hero-5">
+      <b class="ti">Undertale</b><span class="d">tobyfox</span>
+      <div class="stats">
+        <span class="l"><small>Last played</small>27 May 2026</span>
+        <span class="tm"><small>Play time</small>3.8 hours</span>
+        <span class="v"><small>Deck status</small>Not verified</span>
+      </div>
+      <button class="play" onclick="openGame(5)">▶ Play</button>
+    </div>
+
+    <!-- Hero 6: BeamNG.drive -->
+    <div class="hero" id="hero-6">
+      <b class="ti">BeamNG.drive</b><span class="d">BeamNG</span>
+      <div class="stats">
+        <span class="l"><small>Last played</small>2 weeks ago</span>
+        <span class="tm"><small>Play time</small>42.5 hours</span>
+        <span class="v"><small>Deck status</small>Playable</span>
+      </div>
+      <button class="play" onclick="openGame(6)">▶ Play</button>
+    </div>
+  </main>
+
+  <!-- LIBRARY PAGE -->
+  <main class="pg" id="page-lib">
+    <div class="pt">Library</div>
+    <div class="lib-wrap">
+      <div class="libx">
+        <div class="li g1" id="li-1" onclick="openGame(1)"><u></u><span>Minecraft</span></div>
+        <div class="li g2" id="li-2" onclick="openGame(2)"><u></u><span>Empires of the Undergrowth</span></div>
+        <div class="li g3" id="li-3" onclick="openGame(3)"><u></u><span>Left 4 Dead 2</span></div>
+        <div class="li g4" id="li-4" onclick="openGame(4)"><u></u><span>Taiko no Tatsujin</span></div>
+        <div class="li g5" id="li-5" onclick="openGame(5)"><u></u><span>Undertale</span></div>
+        <div class="li g6" id="li-6" onclick="openGame(6)"><u></u><span>BeamNG.drive</span></div>
+      </div>
+
+      <div class="dets">
+        <!-- Game 1 Details: Minecraft -->
+        <div class="det" id="game-detail-1">
+          <div class="dh g1">
+            <div class="in">
+              <b class="ti">Minecraft</b><span class="d">Mojang Studios</span>
+              <div class="stats">
+                <span class="l"><small>Last played</small>1 month ago</span>
+                <span class="tm"><small>Play time</small>5 hours</span>
+                <span class="v"><small>Deck status</small>Unverified</span>
+              </div>
+              <button class="play">▶ Play</button>
+            </div>
+          </div>
+          <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab(1, 't1')">Overview</button>
+            <button class="tab-btn" onclick="switchTab(1, 't2')">Achievements</button>
+            <button class="tab-btn" onclick="switchTab(1, 't3')">Community</button>
+            <button class="tab-btn" onclick="switchTab(1, 't4')">Store page</button>
+            <button class="tab-btn" onclick="switchTab(1, 't5')">Controls</button>
+            <button class="tab-btn" onclick="switchTab(1, 't6')">Media</button>
+          </nav>
+          <!-- Overview Tab -->
+          <div class="p p1" id="det-1-t1">
+            <p class="desc">A sandbox game where you mine, craft, and build in an infinite blocky world. Survive mobs or go creative.</p>
+            <div class="facts">
+              <span><small>Genre</small>Sandbox, Survival</span>
+              <span><small>Developer</small>Mojang Studios</span>
+              <span><small>Released</small>Nov 2011</span>
+              <span><small>Size on disk</small>1.0 GB</span>
+              <span><small>Play time</small>5 hours</span>
+              <span><small>Deck status</small>Unverified</span>
+            </div>
+          </div>
+          <!-- Achievements Tab -->
+          <div class="p p2" id="det-1-t2">
+            <span class="as">0 of 3 achievements (15% progress)</span>
+            <div class="abar"><s data-fill="15%"></s></div>
+            <div class="ar"><b>Stone Age</b><span>Mine stone with your new pickaxe</span></div>
+            <div class="ar"><b>Acquire Hardware</b><span>Smelt an iron ingot</span></div>
+            <div class="ar"><b>Diamonds!</b><span>Acquire diamonds</span></div>
+          </div>
+          <!-- Community Tab -->
+          <div class="p p3" id="det-1-t3">
+            <div class="kv"><span>Playing now</span><b>1.3 million to 2.8 million</b></div>
+            <div class="kv"><span>Friends</span><b>No friends currently listed</b></div>
+            <div class="kv"><span>Latest news</span><b>New update available</b></div>
+            <div class="kv"><span>Posted</span><b>Recently</b></div>
+            <h3 class="nph">Notable players</h3>
+            <div class="ar np" data-rank="#1"><b>Steve_Builder</b><span>Master builder, 4 hours</span></div>
+            <div class="ar np" data-rank="#2"><b>Alex_Miner</b><span>Cave explorer, 1 hour</span></div>
+            <div class="ar np" data-rank="#3"><b>Creeper_Dodger</b><span>Survivalist, 1 hour</span></div>
+          </div>
+          <!-- Store Page Tab -->
+          <div class="p p4" id="det-1-t4">
+            <div class="kv"><span>Rating</span><b>Very Positive</b></div>
+            <div class="kv"><span>Reviews</span><b>Not listed</b></div>
+            <div class="kv"><span>Tags</span><b>Sandbox, Survival, Creative, Multiplayer</b></div>
+            <div class="kv"><span>Price</span><b>$29.99</b></div>
+            <div class="kv"><span>Deck compatibility</span><b>Unverified</b></div>
+          </div>
+          <!-- Controls Tab -->
+          <div class="p p5" id="det-1-t5">
+            <div class="kv"><span>Controller layout</span><b>Keyboard, mouse and gamepad</b></div>
+            <div class="kv"><span>Gyro</span><b>Not supported</b></div>
+          </div>
+          <!-- Media Tab -->
+          <div class="p p6" id="det-1-t6">
+            <p class="vc">Launch game trailer (video source pending)</p>
+          </div>
+        </div>
+
+        <!-- Game 2 Details: Empires of the Undergrowth -->
+        <div class="det" id="game-detail-2">
+          <div class="dh g2">
+            <div class="in">
+              <b class="ti">Empires of the Undergrowth</b><span class="d">Slug Disco</span>
+              <div class="stats">
+                <span class="l"><small>Last played</small>Aug 18, 2026</span>
+                <span class="tm"><small>Play time</small>50.8 hours</span>
+                <span class="v"><small>Deck status</small>Playable</span>
+              </div>
+              <button class="play">▶ Play</button>
+            </div>
+          </div>
+          <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab(2, 't1')">Overview</button>
+            <button class="tab-btn" onclick="switchTab(2, 't2')">Achievements</button>
+            <button class="tab-btn" onclick="switchTab(2, 't3')">Community</button>
+            <button class="tab-btn" onclick="switchTab(2, 't4')">Store page</button>
+            <button class="tab-btn" onclick="switchTab(2, 't5')">Controls</button>
+            <button class="tab-btn" onclick="switchTab(2, 't6')">Media</button>
+          </nav>
+          <!-- Overview Tab -->
+          <div class="p p1" id="det-2-t1">
+            <p class="desc">Empires of the Undergrowth is a real-time strategy game where you manage ant colonies, build and defend underground nests, and command armies in insect-scale warfare.</p>
+            <div class="facts">
+              <span><small>Genre</small>RTS (Real-Time Strategy)</span>
+              <span><small>Developer</small>Slug Disco</span>
+              <span><small>Released</small>Jun 8, 2024</span>
+              <span><small>Size on disk</small>5.4 GB</span>
+              <span><small>Play time</small>50.8 hours</span>
+              <span><small>Deck status</small>Playable</span>
+            </div>
+          </div>
+          <!-- Achievements Tab -->
+          <div class="p p2" id="det-2-t2">
+            <span class="as">45 of 186 achievements (24.2%)</span>
+            <div class="abar"><s data-fill="24.2%"></s></div>
+            <div class="ar"><b>RISING TIDE - IMPOSSIBLE</b><span>Beat "Rising Tide" on impossible difficulty.</span></div>
+            <div class="ar"><b>THE PERFECT CHRISTMAS</b><span>Beat the "Festive Spider" level with all gifts remaining under the tree.</span></div>
+            <div class="ar"><b>RAPID GROWTH</b><span>Beat "Subjugation" on medium difficulty within 16 minutes.</span></div>
+          </div>
+          <!-- Community Tab -->
+          <div class="p p3" id="det-2-t3">
+            <div class="kv"><span>Playing now</span><b>890 players</b></div>
+            <div class="kv"><span>Friends</span><b>Community &amp; colony strategists</b></div>
+            <div class="kv"><span>Latest news</span><b>Patch Notes - More fixes for the SWAMPED! Update</b></div>
+            <div class="kv"><span>Posted</span><b>November 3, 2026 (Released Jun 8, 2024)</b></div>
+            <h3 class="nph">Notable players</h3>
+            <div class="ar np" data-rank="#1"><b>TheGamingBeaver</b><span>Colony &amp; strategy gameplay</span></div>
+            <div class="ar np" data-rank="#2"><b>BaronVonGames</b><span>Tactical &amp; simulation runs</span></div>
+            <div class="ar np" data-rank="#3"><b>Frazzz</b><span>RTS &amp; challenge showcases</span></div>
+          </div>
+          <!-- Store Page Tab -->
+          <div class="p p4" id="det-2-t4">
+            <div class="kv"><span>Rating</span><b>Very Positive</b></div>
+            <div class="kv"><span>Reviews</span><b>18,123 reviews</b></div>
+            <div class="kv"><span>Tags</span><b>Strategy, Base Building, Simulation, City builder, Grand Strategy, Colony Sim, Building, Management, Sandbox, Historical, Economy, Resource Management</b></div>
+            <div class="kv"><span>Price</span><b>₱699.95</b></div>
+            <div class="kv"><span>Deck compatibility</span><b>Playable</b></div>
+          </div>
+          <!-- Controls Tab -->
+          <div class="p p5" id="det-2-t5">
+            <div class="kv"><span>Controller layout</span><b>Keyboard, Mouse, Console Controller</b></div>
+            <div class="kv"><span>Gyro</span><b>Not available</b></div>
+          </div>
+          <!-- Media Tab -->
+          <div class="p p6" id="det-2-t6">
+            <p class="vc">Source: Trailer Vault (<a href="https://share.google/KvyJa3iPSakMEKUIN" target="_blank" rel="noopener">https://share.google/KvyJa3iPSakMEKUIN</a>) — Command swarms of warriors at an unprecedented scale of warfare in this blend of RTS and base-building. Lead ant colonies against the many fearsome threats of the insect world, while building intricate nests, developing pheromone-based tactics, and evolving to meet growing dangers.</p>
+          </div>
+        </div>
+
+        <!-- Game 3 Details: Left 4 Dead 2 -->
+        <div class="det" id="game-detail-3">
+          <div class="dh g3">
+            <div class="in">
+              <b class="ti">Left 4 Dead 2</b><span class="d">Valve</span>
+              <div class="stats">
+                <span class="l"><small>Last played</small>Recently</span>
+                <span class="tm"><small>Play time</small>0.0 hours</span>
+                <span class="v"><small>Deck status</small>Verified</span>
+              </div>
+              <button class="play">▶ Play</button>
+            </div>
+          </div>
+          <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab(3, 't1')">Overview</button>
+            <button class="tab-btn" onclick="switchTab(3, 't2')">Achievements</button>
+            <button class="tab-btn" onclick="switchTab(3, 't3')">Community</button>
+            <button class="tab-btn" onclick="switchTab(3, 't4')">Store page</button>
+            <button class="tab-btn" onclick="switchTab(3, 't5')">Controls</button>
+            <button class="tab-btn" onclick="switchTab(3, 't6')">Media</button>
+          </nav>
+          <!-- Overview Tab -->
+          <div class="p p1" id="det-3-t1">
+            <p class="desc">A cooperative first-person shooter set during a zombie apocalypse. Players work together as four survivors to fight hordes of infected across five campaigns in the Deep South, from Savannah to New Orleans.</p>
+            <div class="facts">
+              <span><small>Genre</small>Action, First-Person Shooter, Survival Horror, Co-op</span>
+              <span><small>Developer</small>Valve</span>
+              <span><small>Released</small>November 16, 2009</span>
+              <span><small>Size on disk</small>13 GB</span>
+              <span><small>Play time</small>0.0 hours</span>
+              <span><small>Deck status</small>Verified</span>
+            </div>
+          </div>
+          <!-- Achievements Tab -->
+          <div class="p p2" id="det-3-t2">
+            <span class="as">101 of 101 achievements (100% full collection)</span>
+            <div class="abar"><s data-fill="100%"></s></div>
+            <div class="ar"><b>GNOME ALONE</b><span>Successfully launch Gnome Chompski into space.</span></div>
+            <div class="ar"><b>ACID REFLEX</b><span>Kill a Spitter before she is able to spit.</span></div>
+            <div class="ar"><b>A RIDE DENIED</b><span>Kill a Jockey within 2 seconds of it jumping on a Survivor.</span></div>
+          </div>
+          <!-- Community Tab -->
+          <div class="p p3" id="det-3-t3">
+            <div class="kv"><span>Playing now</span><b>~18,296 players</b></div>
+            <div class="kv"><span>Friends</span><b>Cooperative gaming community with online multiplayer, team-based gameplay, and Workshop content</b></div>
+            <div class="kv"><span>Latest news</span><b>Left 4 Dead 2 – Update</b></div>
+            <div class="kv"><span>Posted</span><b>June 30, 2026</b></div>
+            <h3 class="nph">Notable players</h3>
+            <div class="ar np" data-rank="#1"><b>Khomchik</b><span>Left 4 Dead 2 content creator known for Expert difficulty gameplay, challenges, and speedruns.</span></div>
+            <div class="ar np" data-rank="#2"><b>WaifuRuns</b><span>Speedrunning content creator covering Left 4 Dead 2 records and speedrun strategies.</span></div>
+            <div class="ar np" data-rank="#3"><b>JurasPatryk</b><span>Left 4 Dead 2 speedrunner known for campaign speedruns and community records.</span></div>
+          </div>
+          <!-- Store Page Tab -->
+          <div class="p p4" id="det-3-t4">
+            <div class="kv"><span>Rating</span><b>Overwhelmingly Positive (~97% positive)</b></div>
+            <div class="kv"><span>Reviews</span><b>~826,821 reviews</b></div>
+            <div class="kv"><span>Tags</span><b>Zombies, Co-op, FPS, Multiplayer, Shooter, Online Co-op, Action, Survival, Horror, Gore, First-Person, Team-Based, Moddable, Survival Horror, Post-apocalyptic, Singleplayer, Adventure, Local Co-op, Replay Value, Tactical</b></div>
+            <div class="kv"><span>Price</span><b>Check Philippine Steam Store pricing</b></div>
+            <div class="kv"><span>Deck compatibility</span><b>Verified</b></div>
+          </div>
+          <!-- Controls Tab -->
+          <div class="p p5" id="det-3-t5">
+            <div class="kv"><span>Controller layout</span><b>Full Controller Support; supports Xbox and PlayStation controllers</b></div>
+            <div class="kv"><span>PC (Keyboard &amp; Mouse)</span><b>Move: W, A, S, D | Jump: Space | Crouch: Ctrl | Shoot/Use: Left Click | Shove/Heal/Give Pills: Right Click | Reload: R | Interact/Revive: E | Switch Weapons: 1–5 or Scroll Wheel | Flashlight: F</b></div>
+            <div class="kv"><span>Xbox / Controller</span><b>Move: Left Stick | Aim: Right Stick | Shoot: RT | Shove/Give Item: LT | Jump: A | Crouch: B | Interact/Revive/Reload: X | Switch Weapons: Y | Medkit/Throwables/Pills: D-Pad (Up, Left, Right) | Flashlight: D-Pad Down</b></div>
+          </div>
+          <!-- Media Tab -->
+          <div class="p p6" id="det-3-t6">
+            <p class="vc">Left 4 Dead 2 gameplay showcase — <a href="https://www.youtube.com/watch?v=o7R9F8fL4EQ" target="_blank" rel="noopener">https://www.youtube.com/watch?v=o7R9F8fL4EQ</a></p>
+          </div>
+        </div>
+
+        <!-- Game 4 Details: Taiko no Tatsujin -->
+        <div class="det" id="game-detail-4">
+          <div class="dh g4">
+            <div class="in">
+              <b class="ti">Taiko no Tatsujin</b><span class="d">Bandai Namco Amusement Lab Inc.</span>
+              <div class="stats">
+                <span class="l"><small>Last played</small>Now</span>
+                <span class="tm"><small>Play time</small>564.6 hours</span>
+                <span class="v"><small>Deck status</small>Verified</span>
+              </div>
+              <button class="play">▶ Play</button>
+            </div>
+          </div>
+          <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab(4, 't1')">Overview</button>
+            <button class="tab-btn" onclick="switchTab(4, 't2')">Achievements</button>
+            <button class="tab-btn" onclick="switchTab(4, 't3')">Community</button>
+            <button class="tab-btn" onclick="switchTab(4, 't4')">Store page</button>
+            <button class="tab-btn" onclick="switchTab(4, 't5')">Controls</button>
+            <button class="tab-btn" onclick="switchTab(4, 't6')">Media</button>
+          </nav>
+          <!-- Overview Tab -->
+          <div class="p p1" id="det-4-t1">
+            <p class="desc">A colorful rhythm game where players drum along to songs by hitting red (don) and blue (ka) notes in time with the music. Featuring various genres, fun game modes, online multiplayer, and beloved characters, players can enjoy the rhythm and aim to become a Taiko master.</p>
+            <div class="facts">
+              <span><small>Genre</small>Rhythm, Music, Casual, Arcade</span>
+              <span><small>Developer</small>Bandai Namco Amusement Lab Inc.</span>
+              <span><small>Released</small>February 21, 2001</span>
+              <span><small>Size on disk</small>3.58 GB</span>
+              <span><small>Play time</small>564.6 hours</span>
+              <span><small>Deck status</small>Verified</span>
+            </div>
+          </div>
+          <!-- Achievements Tab -->
+          <div class="p p2" id="det-4-t2">
+            <span class="as">60% progress (33 total achievements)</span>
+            <div class="abar"><s data-fill="60%"></s></div>
+            <div class="ar"><b>Getting Used to the Drums</b><span>Complete an introductory achievement in the game</span></div>
+            <div class="ar"><b>Becoming One with the Drums</b><span>Progress through the game's rhythm challenge.</span></div>
+            <div class="ar"><b>Taiko Master</b><span>Earn an achievement related to mastering Taiko gameplay.</span></div>
+          </div>
+          <!-- Community Tab -->
+          <div class="p p3" id="det-4-t3">
+            <div class="kv"><span>Playing now</span><b>20.4k players</b></div>
+            <div class="kv"><span>Friends</span><b>No friends currently playing</b></div>
+            <div class="kv"><span>Latest news</span><b>New DLC Available - Anime Pack Vol.7</b></div>
+            <div class="kv"><span>Posted</span><b>August 20, 2026</b></div>
+            <h3 class="nph">Notable players</h3>
+            <div class="ar np" data-rank="#1"><b>teamPGX</b><span><a href="https://www.youtube.com/@teamPGX/videos" target="_blank" rel="noopener">youtube.com/@teamPGX/videos</a></span></div>
+            <div class="ar np" data-rank="#2"><b>コーシー</b><span><a href="https://www.youtube.com/@yume1610rein" target="_blank" rel="noopener">youtube.com/@yume1610rein</a></span></div>
+            <div class="ar np" data-rank="#3"><b>team RNH【太鼓の達人】</b><span><a href="https://www.youtube.com/@team_rnh" target="_blank" rel="noopener">youtube.com/@team_rnh</a></span></div>
+          </div>
+          <!-- Store Page Tab -->
+          <div class="p p4" id="det-4-t4">
+            <div class="kv"><span>Rating</span><b>Very positive (89% positive)</b></div>
+            <div class="kv"><span>Reviews</span><b>10,317 reviews</b></div>
+            <div class="kv"><span>Tags</span><b>Rhythm, Music, Anime, Casual, Arcade, Multiplayer</b></div>
+            <div class="kv"><span>Price</span><b>₱1,999.00</b></div>
+            <div class="kv"><span>Deck compatibility</span><b>Verified - functional on Steam Deck</b></div>
+          </div>
+          <!-- Controls Tab -->
+          <div class="p p5" id="det-4-t5">
+            <div class="kv"><span>Controller layout</span><b>Keyboard, touchscreen, Taiko Drum, Full Controller Support</b></div>
+            <div class="kv"><span>Gyro</span><b>Not required</b></div>
+          </div>
+          <!-- Media Tab -->
+          <div class="p p6" id="det-4-t6">
+            <p class="vc">Taiko no Tatsujin - Gameplay sample (Google Drive clip)</p>
+          </div>
+        </div>
+
+        <!-- Game 5 Details: Undertale -->
+        <div class="det" id="game-detail-5">
+          <div class="dh g5">
+            <div class="in">
+              <b class="ti">Undertale</b><span class="d">tobyfox</span>
+              <div class="stats">
+                <span class="l"><small>Last played</small>27 May 2026</span>
+                <span class="tm"><small>Play time</small>3.8 hours</span>
+                <span class="v"><small>Deck status</small>Not verified</span>
+              </div>
+              <button class="play">▶ Play</button>
+            </div>
+          </div>
+          <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab(5, 't1')">Overview</button>
+            <button class="tab-btn" onclick="switchTab(5, 't2')">Achievements</button>
+            <button class="tab-btn" onclick="switchTab(5, 't3')">Community</button>
+            <button class="tab-btn" onclick="switchTab(5, 't4')">Store page</button>
+            <button class="tab-btn" onclick="switchTab(5, 't5')">Controls</button>
+            <button class="tab-btn" onclick="switchTab(5, 't6')">Media</button>
+          </nav>
+          <!-- Overview Tab -->
+          <div class="p p1" id="det-5-t1">
+            <p class="desc">UNDERTALE! The RPG game where you don't have to destroy anyone.</p>
+            <div class="facts">
+              <span><small>Genre</small>RPG, Indie</span>
+              <span><small>Developer</small>tobyfox</span>
+              <span><small>Released</small>15 Sept 2015</span>
+              <span><small>Size on disk</small>155.54 MiB</span>
+              <span><small>Play time</small>3.8 hours (7 hours average)</span>
+              <span><small>Deck status</small>Not verified</span>
+            </div>
+          </div>
+          <!-- Achievements Tab -->
+          <div class="p p2" id="det-5-t2">
+            <span class="as">Undertale has no achievements on Steam</span>
+            <div class="abar"><s data-fill="0%"></s></div>
+            <div class="ar"><b>No Steam Achievements</b><span>This title does not include Steam achievements.</span></div>
+          </div>
+          <!-- Community Tab -->
+          <div class="p p3" id="det-5-t3">
+            <div class="kv"><span>Playing now</span><b>807</b></div>
+            <div class="kv"><span>Friends</span><b>1 friend already owns the game</b></div>
+            <div class="kv"><span>Latest news</span><b>None</b></div>
+            <div class="kv"><span>Posted</span><b>None</b></div>
+            <h3 class="nph">Notable quotes</h3>
+            <div class="ar np" data-rank="#1"><b>Destructoid</b><span>"The puzzles aren't particularly impressive"</span></div>
+            <div class="ar np" data-rank="#2"><b>PCInvasion</b><span>"I have a couple of issues with the use interface."</span></div>
+            <div class="ar np" data-rank="#3"><b>The Jimquisition</b><span>"If there's a criticism to be had, it's that sometimes Toby Fox doesn't know when to let a joke go."</span></div>
+          </div>
+          <!-- Store Page Tab -->
+          <div class="p p4" id="det-5-t4">
+            <div class="kv"><span>Rating</span><b>Overwhelmingly positive</b></div>
+            <div class="kv"><span>Reviews</span><b>314,079 reviews</b></div>
+            <div class="kv"><span>Tags</span><b>RPG, Indie, Story Rich, Great Soundtrack, Multiple Endings</b></div>
+            <div class="kv"><span>Price</span><b>₱319.95</b></div>
+            <div class="kv"><span>Deck compatibility</span><b>Playable</b></div>
+          </div>
+          <!-- Controls Tab -->
+          <div class="p p5" id="det-5-t5">
+            <div class="kv"><span>Controller layout</span><b>Three core action inputs plus directional movement: Confirm (Z / Enter), Cancel (X / Shift), Menu (C / Ctrl)</b></div>
+            <div class="kv"><span>Gyro</span><b>Does not include native gyroscope (motion) controls on any platform</b></div>
+          </div>
+          <!-- Media Tab -->
+          <div class="p p6" id="det-5-t6">
+            <p class="vc">Trailer / Showcase — <a href="https://youtu.be/1Hojv0m3TqA?si=UD8AD_w_Razop-9w" target="_blank" rel="noopener">https://youtu.be/1Hojv0m3TqA?si=UD8AD_w_Razop-9w</a></p>
+          </div>
+        </div>
+
+        <!-- Game 6 Details: BeamNG.drive -->
+        <div class="det" id="game-detail-6">
+          <div class="dh g6">
+            <div class="in">
+              <b class="ti">BeamNG.drive</b><span class="d">BeamNG</span>
+              <div class="stats">
+                <span class="l"><small>Last played</small>2 weeks ago</span>
+                <span class="tm"><small>Play time</small>42.5 hours</span>
+                <span class="v"><small>Deck status</small>Playable</span>
+              </div>
+              <button class="play">▶ Play</button>
+            </div>
+          </div>
+          <nav class="tabs">
+            <button class="tab-btn active" onclick="switchTab(6, 't1')">Overview</button>
+            <button class="tab-btn" onclick="switchTab(6, 't2')">Achievements</button>
+            <button class="tab-btn" onclick="switchTab(6, 't3')">Community</button>
+            <button class="tab-btn" onclick="switchTab(6, 't4')">Store page</button>
+            <button class="tab-btn" onclick="switchTab(6, 't5')">Controls</button>
+            <button class="tab-btn" onclick="switchTab(6, 't6')">Media</button>
+          </nav>
+          <!-- Overview Tab -->
+          <div class="p p1" id="det-6-t1">
+            <p class="desc">A dynamic soft-body physics vehicle simulator capable of doing almost anything—from realistic crash testing and rally stages to open-world free roam and scenarios.</p>
+            <div class="facts">
+              <span><small>Genre</small>Simulation, Driving, Racing, Sandbox</span>
+              <span><small>Developer</small>BeamNG</span>
+              <span><small>Released</small>May 29, 2015 (Early Access)</span>
+              <span><small>Size on disk</small>45.2 GB</span>
+              <span><small>Play time</small>42.5 hours</span>
+              <span><small>Deck status</small>Playable</span>
+            </div>
+          </div>
+          <!-- Achievements Tab -->
+          <div class="p p2" id="det-6-t2">
+            <span class="as">8 of 32 achievements (25%)</span>
+            <div class="abar"><s data-fill="25%"></s></div>
+            <div class="ar"><b>Soft-Body Initiation</b><span>Deform a vehicle frame in free roam.</span></div>
+            <div class="ar"><b>Clean Apex</b><span>Complete a timed circuit stage without collisions.</span></div>
+            <div class="ar"><b>Modder's Garage</b><span>Spawn a custom or workshop vehicle configuration.</span></div>
+          </div>
+          <!-- Community Tab -->
+          <div class="p p3" id="det-6-t3">
+            <div class="kv"><span>Playing now</span><b>14,800 players</b></div>
+            <div class="kv"><span>Friends</span><b>Active modding and physics sandbox community</b></div>
+            <div class="kv"><span>Latest news</span><b>Physics &amp; Career Mode Expansion Update</b></div>
+            <div class="kv"><span>Posted</span><b>September 14, 2026</b></div>
+            <h3 class="nph">Notable players</h3>
+            <div class="ar np" data-rank="#1"><b>MuYe</b><span>Known for creative BeamNG physics experiments and challenges</span></div>
+            <div class="ar np" data-rank="#2"><b>Neilogigan</b><span>Known for crash tests, beam challenges, and vehicle builds</span></div>
+            <div class="ar np" data-rank="#3"><b>WhyBeAre</b><span>Known for BeamNG mod showcases and gameplay</span></div>
+          </div>
+          <!-- Store Page Tab -->
+          <div class="p p4" id="det-6-t4">
+            <div class="kv"><span>Rating</span><b>Overwhelmingly Positive (97% positive)</b></div>
+            <div class="kv"><span>Reviews</span><b>210,450 reviews</b></div>
+            <div class="kv"><span>Tags</span><b>Simulation, Driving, Destruction, Sandbox, Racing, Physics, Moddable, Open World, Realistic</b></div>
+            <div class="kv"><span>Price</span><b>₱899.00</b></div>
+            <div class="kv"><span>Deck compatibility</span><b>Playable</b></div>
+          </div>
+          <!-- Controls Tab -->
+          <div class="p p5" id="det-6-t5">
+            <div class="kv"><span>Controller layout</span><b>Full Controller Support, Steering Wheel, Keyboard &amp; Mouse</b></div>
+            <div class="kv"><span>Gyro</span><b>Supported via Steam Input / controller gyro</b></div>
+          </div>
+          <!-- Media Tab -->
+          <div class="p p6" id="det-6-t6">
+            <p class="vc">BeamNG.drive soft-body physics &amp; free roam showcase</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- STORE PAGE -->
+  <main class="pg" id="page-store">
+    <div class="pt">Store</div>
+    <div class="bar2">Search the store</div>
+    <div class="wide">
+      <div class="w g1" onclick="openGame(1)"><span class="w-title">Minecraft</span><span class="w-price">$29.99</span></div>
+      <div class="w g2" onclick="openGame(2)"><span class="w-title">Empires of the Undergrowth</span><span class="w-price">₱699.95</span></div>
+      <div class="w g3" onclick="openGame(3)"><span class="w-title">Left 4 Dead 2</span><span class="w-price">PH Store</span></div>
+      <div class="w g4" onclick="openGame(4)"><span class="w-title">Taiko no Tatsujin</span><span class="w-price">₱1,999.00</span></div>
+      <div class="w g5" onclick="openGame(5)"><span class="w-title">Undertale</span><span class="w-price">₱319.95</span></div>
+      <div class="w g6" onclick="openGame(6)"><span class="w-title">BeamNG.drive</span><span class="w-price">₱899.00</span></div>
+    </div>
+  </main>
+
+  <!-- DOWNLOADS PAGE -->
+  <main class="pg" id="page-dl">
+    <div class="pt">Downloads</div>
+    <div class="r g1" onclick="openGame(1)"><u class="th"></u><b>Minecraft</b><span class="s">Up to date</span><span class="sz">1.0 GB</span><i class="bt2"><s></s></i></div>
+    <div class="r g2" onclick="openGame(2)"><u class="th"></u><b>Empires of the Undergrowth</b><span class="s">Up to date</span><span class="sz">5.4 GB</span><i class="bt2"><s></s></i></div>
+    <div class="r g3" onclick="openGame(3)"><u class="th"></u><b>Left 4 Dead 2</b><span class="s">Up to date</span><span class="sz">13 GB</span><i class="bt2"><s></s></i></div>
+    <div class="r g4" onclick="openGame(4)"><u class="th"></u><b>Taiko no Tatsujin</b><span class="s">Up to date</span><span class="sz">3.58 GB</span><i class="bt2"><s></s></i></div>
+    <div class="r g5" onclick="openGame(5)"><u class="th"></u><b>Undertale</b><span class="s">Downloading 64%</span><span class="sz">155.54 MiB</span><i class="bt2"><s style="width:64%"></s></i></div>
+    <div class="r g6" onclick="openGame(6)"><u class="th"></u><b>BeamNG.drive</b><span class="s">Up to date</span><span class="sz">45.2 GB</span><i class="bt2"><s></s></i></div>
+  </main>
+
+  <!-- SETTINGS PAGE -->
+  <main class="pg set" id="page-set">
+    <div class="pt">Settings</div>
+    <label>Wi-Fi<input type="checkbox" checked></label>
+    <label>Bluetooth<input type="checkbox"></label>
+    <label>Brightness<input type="range" value="60"></label>
+    <label>Volume<input type="range" value="40"></label>
+    <label>Performance overlay<input type="checkbox"></label>
+    <label>Frame rate limit 40 FPS<input type="checkbox" checked></label>
+    <label>Half rate shading<input type="checkbox"></label>
+  </main>
+
+  <!-- STEAM MENU -->
+  <div class="menu" id="steam-menu">
+    <nav class="panel">
+      <button class="mi" onclick="showPage('home')">⌂ Home</button>
+      <button class="mi" onclick="showPage('store')">◈ Store</button>
+      <button class="mi" onclick="showPage('lib')">▦ Library</button>
+      <button class="mi" onclick="showPage('dl')">↓ Downloads</button>
+      <button class="mi" onclick="showPage('set')">⚙ Settings</button>
+      <span class="pn">Steam Deck OLED</span>
+    </nav>
+    <div class="bd" onclick="toggleMenu()"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <span><b class="a">A</b>Select</span>
+    <span onclick="showPage('home')"><b class="b">B</b>Back</span>
+    <span><b class="x">X</b>Options</span>
+    <span><b class="y">Y</b>Search</span>
+  </footer>
+
+  <script>
+    // show one page and hide the rest
+    function showPage(name) {
+      document.getElementById("page-home").style.display = "none";
+      document.getElementById("page-lib").style.display = "none";
+      document.getElementById("page-store").style.display = "none";
+      document.getElementById("page-dl").style.display = "none";
+      document.getElementById("page-set").style.display = "none";
+
+      document.getElementById("page-" + name).style.display = "block";
+      document.getElementById("steam-menu").style.display = "none";
+    }
+
+    // open and close the menu
+    function toggleMenu() {
+      var menu = document.getElementById("steam-menu");
+      if (menu.style.display == "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+    }
+
+    // change the big text on the home page
+    function showHero(n) {
+      for (var i = 1; i <= 6; i++) {
+        document.getElementById("hero-" + i).style.display = "none";
+      }
+      document.getElementById("hero-" + n).style.display = "block";
+    }
+
+    // go to a game in the library
+    function openGame(n) {
+      for (var i = 1; i <= 6; i++) {
+        document.getElementById("game-detail-" + i).style.display = "none";
+        document.getElementById("li-" + i).className = "li g" + i;
+      }
+      document.getElementById("game-detail-" + n).style.display = "block";
+      document.getElementById("li-" + n).className = "li g" + n + " active";
+      showPage("lib");
+    }
+
+    // switch tabs inside a game
+    function switchTab(game, tab) {
+      var box = document.getElementById("game-detail-" + game);
+      var buttons = box.getElementsByClassName("tab-btn");
+      for (var i = 1; i <= 6; i++) {
+        document.getElementById("det-" + game + "-t" + i).style.display = "none";
+        buttons[i - 1].className = "tab-btn";
+      }
+      document.getElementById("det-" + game + "-" + tab).style.display = "block";
+      buttons[tab.charAt(1) - 1].className = "tab-btn active";
+    }
+
+    // apply achievement bar widths from data-fill attributes
+    var bars = document.querySelectorAll(".abar s[data-fill]");
+    for (var b = 0; b < bars.length; b++) {
+      bars[b].style.width = bars[b].getAttribute("data-fill");
+    }
+
+    // start on game 1
+    showHero(1);
+    openGame(1);
+    showPage("home");
+  </script>
+</body>
+</html>
